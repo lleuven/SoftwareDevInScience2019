@@ -23,6 +23,8 @@
 # Software Development in Science Workshop 2017
 #        Python GitHub project example
 #
+# As amended by James Geraets
+# j.geraets@fz-juelich.de
 
 """
 Usage:

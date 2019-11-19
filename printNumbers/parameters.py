@@ -23,10 +23,10 @@
 # Class to process and store program parameters.
 #
 
-CONST_VERSION = 'V1.0'
-CONST_VERSION_STRING = '+ + PrintNumbers ' + CONST_VERSION + ' (Software Development in Science 2017) + +'
+CONST_VERSION = 'V1.0.1'
+CONST_VERSION_STRING = '+ + PrintNumbers ' + CONST_VERSION + ' (Software Development in Science 2019) + +'
 CONST_DEF_OPERAND_VAL = 10
-CONST_MAX_OPERAND_VAL = 20
+CONST_MAX_OPERAND_VAL = 35
 CONST_FUNC_CODE_FIBONACCI = 0
 CONST_FUNC_CODE_FACTORIAL = 1
 
@@ -38,7 +38,12 @@ class Parameters(object):
         self.__setParameters(cmdLineArgs)
 
     def __setParameters(self, cmdLineArgs):
-        self.operand = (int(cmdLineArgs['<operand>']))
+        try:
+            self.operand = (int(cmdLineArgs['<operand>']))
+        except ValueError, e:
+            pass
+        finally:
+            pass
         if cmdLineArgs['--fibonacci']:
             self.functionIndex = CONST_FUNC_CODE_FIBONACCI
         elif cmdLineArgs['--factorial']:
@@ -50,7 +55,7 @@ class Parameters(object):
 
     @operand.setter
     def operand(self, n):
-        if n <= 0 or n > CONST_MAX_OPERAND_VAL:
+        if n <= 0 or n > CONST_MAX_OPERAND_VAL or type(n) is not int:
             print('Error: Operand out of range: 0 < <operand> <=', CONST_MAX_OPERAND_VAL)
             print('       The default value ( n =', CONST_DEF_OPERAND_VAL, ') is used.')
             print('')
