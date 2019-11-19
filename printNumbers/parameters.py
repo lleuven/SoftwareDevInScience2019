@@ -41,9 +41,10 @@ class Parameters(object):
         try:
             self.operand = (int(cmdLineArgs['<operand>']))
         except ValueError, e:
-            pass
-        finally:
-            pass
+            print('Error: Non-integer operand failure')
+            print('       Operator must be integer in range: 0 < <operand> <=', CONST_MAX_OPERAND_VAL)
+            print('       The default value ( n =', CONST_DEF_OPERAND_VAL, ') is used.')
+            print('')
         if cmdLineArgs['--fibonacci']:
             self.functionIndex = CONST_FUNC_CODE_FIBONACCI
         elif cmdLineArgs['--factorial']:
