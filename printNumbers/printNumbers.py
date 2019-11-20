@@ -42,13 +42,12 @@ from functions.fibonacci import *
 from functions.factorial import *
 from functions.square import *
 
-
 #
 # UNIT TEST CLASS
 #
 class square_test(unittest.TestCase):
-  def test_calc_sqare(self):
-    assert(functions.square(2) == 4)
+  def test_calc_sq(self):
+    assert(square(2) == 4)
 
 
 #
@@ -56,14 +55,14 @@ class square_test(unittest.TestCase):
 #
 functionTable = { CONST_FUNC_CODE_FIBONACCI : FibonacciSequence,
                   CONST_FUNC_CODE_FACTORIAL : Factorial,
-                  CONST_FUNC_CODE_SQUARE : Square,
+                  CONST_FUNC_CODE_SQUARE : square,
                 }
 
 #
 # MAIN ENTRY
 #
 if __name__ == '__main__':
-    #unittest.main()
+    unittest.main()
     print('')
     print(CONST_VERSION_STRING)
     print('')

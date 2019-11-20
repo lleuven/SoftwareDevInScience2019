@@ -36,6 +36,7 @@ class Parameters(object):
     def __init__(self, cmdLineArgs):
         self.operand = CONST_DEF_OPERAND_VAL
         self.functionIndex = CONST_FUNC_CODE_FIBONACCI
+        self.functionIndex = CONST_FUNC_CODE_SQUARE
         self.__setParameters(cmdLineArgs)
 
     def __setParameters(self, cmdLineArgs):

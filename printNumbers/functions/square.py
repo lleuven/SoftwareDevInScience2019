@@ -21,7 +21,7 @@
 
 import math
 
-def Square(n):
+def square(n):
     '''
     :param n:  Operand
     :return:   n * n
