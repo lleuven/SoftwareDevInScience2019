@@ -39,12 +39,14 @@ from docopt import docopt
 from parameters import *
 from functions.fibonacci import *
 from functions.factorial import *
+from functions.square import *
 
 #
 # FUNCTION TABLE
 #
 functionTable = { CONST_FUNC_CODE_FIBONACCI : FibonacciSequence,
                   CONST_FUNC_CODE_FACTORIAL : Factorial,
+                  CONST_FUNC_CODE_SQUARE : Square,
                 }
 
 #
