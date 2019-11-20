@@ -36,10 +36,20 @@ Options:
 """
 
 from docopt import docopt
+import unittest
 from parameters import *
 from functions.fibonacci import *
 from functions.factorial import *
 from functions.square import *
+
+
+#
+# UNIT TEST CLASS
+#
+class square_test(unittest.TestCase):
+  def test_calc_sqare(self):
+    assert(functions.square(2) == 4)
+
 
 #
 # FUNCTION TABLE
@@ -53,19 +63,20 @@ functionTable = { CONST_FUNC_CODE_FIBONACCI : FibonacciSequence,
 # MAIN ENTRY
 #
 if __name__ == '__main__':
-    print('')
-    print(CONST_VERSION_STRING)
-    print('')
+  unittest.main()
+    # print('')
+    # print(CONST_VERSION_STRING)
+    # print('')
 
-    # Process command line arguments.
-    params = Parameters(docopt(__doc__, version = CONST_VERSION))
-    params.PrintParameters()
+    # # Process command line arguments.
+    # params = Parameters(docopt(__doc__, version = CONST_VERSION))
+    # params.PrintParameters()
 
-    # Call corresponding function with <functionIndex> from <functionTable>.
-    result = functionTable[params.functionIndex](params.operand)
+    # # Call corresponding function with <functionIndex> from <functionTable>.
+    # result = functionTable[params.functionIndex](params.operand)
 
-    # Print results depending on the executed function.
-    if params.functionIndex == CONST_FUNC_CODE_FIBONACCI:
-        print('fib(' + str(params.operand) + ') =', result)
-    elif params.functionIndex == CONST_FUNC_CODE_FACTORIAL:
-        print(str(params.operand) + '! =', str(result))
+    # # Print results depending on the executed function.
+    # if params.functionIndex == CONST_FUNC_CODE_FIBONACCI:
+    #     print('fib(' + str(params.operand) + ') =', result)
+    # elif params.functionIndex == CONST_FUNC_CODE_FACTORIAL:
+    #     print(str(params.operand) + '! =', str(result))
