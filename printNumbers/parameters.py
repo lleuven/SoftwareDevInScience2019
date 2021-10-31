@@ -23,18 +23,21 @@
 # Class to process and store program parameters.
 #
 
-CONST_VERSION = 'V1.0.1'
+
+CONST_VERSION = 'V1.1'
 CONST_VERSION_STRING = '+ + PrintNumbers ' + CONST_VERSION + ' (Software Development in Science 2019) + +'
 CONST_DEF_OPERAND_VAL = 10
 CONST_MAX_OPERAND_VAL = 35
 CONST_FUNC_CODE_FIBONACCI = 0
 CONST_FUNC_CODE_FACTORIAL = 1
+CONST_FUNC_CODE_SQUARE = 2
 
 class Parameters(object):
 
     def __init__(self, cmdLineArgs):
         self.operand = CONST_DEF_OPERAND_VAL
         self.functionIndex = CONST_FUNC_CODE_FIBONACCI
+        self.functionIndex = CONST_FUNC_CODE_SQUARE
         self.__setParameters(cmdLineArgs)
 
     def __setParameters(self, cmdLineArgs):
@@ -49,6 +52,8 @@ class Parameters(object):
             self.functionIndex = CONST_FUNC_CODE_FIBONACCI
         elif cmdLineArgs['--factorial']:
             self.functionIndex = CONST_FUNC_CODE_FACTORIAL
+        elif cmdLineArgs['--square']:
+            self.functionIndex = CONST_FUNC_CODE_SQUARE
 
     @property
     def operand(self):
