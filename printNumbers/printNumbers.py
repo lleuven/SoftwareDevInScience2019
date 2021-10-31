@@ -23,6 +23,8 @@
 # Software Development in Science Workshop 2017
 #        Python GitHub project example
 #
+# As amended by James Geraets
+# j.geraets@fz-juelich.de
 
 """
 Usage:
@@ -77,5 +79,6 @@ if __name__ == '__main__':
     # Print results depending on the executed function.
     if params.functionIndex == CONST_FUNC_CODE_FIBONACCI:
         print('fib(' + str(params.operand) + ') =', result)
+        Print("results are fine")
     elif params.functionIndex == CONST_FUNC_CODE_FACTORIAL:
         print(str(params.operand) + '! =', str(result))
